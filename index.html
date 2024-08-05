@@ -34,5 +34,24 @@
         <p>You will be redirected to the login page in <span id="countdown">5</span> seconds.</p>
     </div>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Block Ctrl+Shift+C
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+                    e.preventDefault();
+                }
+                // Block F12
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                }
+            });
+
+            // Block right-click (context menu)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>
